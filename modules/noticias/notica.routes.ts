@@ -1,9 +1,10 @@
 import express from 'express';
 import {
-	borrarNoticia,
 	crearNoticia,
 	listarNoticia,
 	obtenerNoticiaId,
+	borrarNoticia,
+	actulizarNoticia,
 } from './noticia.service';
 
 const noticiasRoutes = express.Router();
@@ -15,11 +16,14 @@ noticiasRoutes.post('/', crearNoticia);
 
 noticiasRoutes.get('/', listarNoticia);
 
-// [GET] endpoint obtener noticia por id /:id
+// // [GET] endpoint obtener noticia por id /:id
 
 noticiasRoutes.get('/:id', obtenerNoticiaId);
 
-// [DELETE] endpoint borrar
+// // [DELETE] endpoint borrar
 noticiasRoutes.delete('/:id', borrarNoticia);
+
+// [PATCH] endpoint update
+noticiasRoutes.patch('/:id', actulizarNoticia);
 
 export default noticiasRoutes;

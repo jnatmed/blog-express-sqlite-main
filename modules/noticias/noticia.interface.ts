@@ -1,6 +1,5 @@
 export interface iNoticia {
-	id: string;
+	id?: string;
 	titulo: string;
 	contenido: string;
-	fecha: string;
 }
